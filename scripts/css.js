@@ -1,3 +1,5 @@
+// peer review @goravson: nice, easy to read.
+
 /*
   Author: jkblair
   Description: Script specific to the css.html page.

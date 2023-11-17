@@ -1,3 +1,5 @@
+// peer review @goravson: nice, easy to read.
+
 //<!-- Author: ealbasry > -->
 
 var link = document.getElementById("links");
