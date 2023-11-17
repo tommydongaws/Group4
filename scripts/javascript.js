@@ -1,4 +1,10 @@
+// peer review @goravson:
+// Great job, cool touch on the submit button.
+// You can convert the if-else to a single line expression 
+// but that may make it harder to read.
+
 /** Author Tommydon */
+
 (function(){
 let submitbtn = document.querySelector("#submitbtn");
 let submitwrapper = document.querySelector("#submitwrapper");

@@ -1,3 +1,5 @@
+// peer review @goravson: nice job with the comments, helpful to understand.
+
 /*
   Author: jkblair
   Description: Code specific to the overall structure and theme.
