@@ -1,0 +1,53 @@
+/*<!-- Author: ealbasry >*/  
+
+div {
+  margin: 0.3rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.3rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  padding: 0.25rem 0.5rem;
+  margin: 0.25rem 0.5rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+  padding: 0.25rem 0.5rem;
+  margin: 0.25rem 0.5rem;
+}
+
+p {
+  font-size: 1rem;
+  padding: 0.25rem 0.5rem;
+  margin: 0.25rem 0.5rem;
+  font-family: sans-serif;
+  font-style: normal;
+}
+
+a:link, a:visited {
+  color: #161512;
+  text-decoration: none;
+  padding: 0.25rem 0.25rem;
+  background-color: var(--lighter);
+}
+
+a:hover {
+  color: #1c44a4;
+  text-decoration: underline;
+  padding: 0.25rem 0.25rem;
+  background-color: var(--lighter);
+}
+
+a:active {
+  color: #5f6c7a;
+  text-decoration: underline;
+  padding: 0.25rem 0.25rem;
+  background-color: var(--lighter);
+}
+
+#links {
+  text-align: center;
+  text-transform: uppercase;
+}

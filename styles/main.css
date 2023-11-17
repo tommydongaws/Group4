@@ -1,0 +1,165 @@
+/*
+  Authors: jkblair, tommydon
+  Description: Base theme for the site. Any styles needed for individual pages will be another sheet.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Orbitron&display=swap');
+
+/* Define variables */
+:root {
+  --darkest: #222;
+  --darker: #483b3a;
+  --dark: #775c55;
+  --light: #6e6262;
+  --lighter: #aa8d7a;
+  --lightest: #d3bfa9;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  height: calc(100vh - 1rem);
+  width: calc(100vw - 1rem);
+  display: flex;
+  flex-direction: column;
+  background:
+    linear-gradient(to bottom, transparent, var(--light) 9vh, var(--dark) 91vh, transparent),
+    url('../images/usurp.png') no-repeat top center/100%,
+    url('../images/usurp.png') no-repeat bottom center/100%;
+}
+
+.press-start {
+  font-family: 'Press Start 2P', monospace;
+}
+
+.vt323 {
+  font-family: 'VT323', monospace;
+}
+
+.orbitron {
+  font-family: 'Orbitron', sans-serif;
+}
+
+#page-top {
+  flex: 0 1 auto;
+  min-height: 6rem;
+  margin: 0;
+  padding: 0;
+}
+
+#menu {
+  display: flex;
+}
+
+#font-select-container {
+  position: absolute;
+  right: 0;
+  width: 18rem;
+  z-index: 1;
+  max-height: 1.25rem;
+  transition: all .2s ease-in-out;
+  overflow: hidden;
+}
+
+#font-select-container:hover {
+  max-height: 6.5rem;
+  transition: all .2s ease-in-out;
+}
+
+#font-select {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#font-select li {
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
+
+#font-select li:not(:last-child) {
+  border-bottom: 1px solid #fff3;
+}
+
+#font-select li:hover {
+  background-color: var(--darker);
+  color: var(--lightest);
+}
+
+#font-select li:hover::before {
+  content: '>';
+  margin-right: 0.25rem;
+}
+
+#font-select li:hover::after {
+  content: '<';
+  margin-left: 0.25rem;
+}
+
+#nav {
+  position: relative;
+  top: 2.25rem;
+  flex: content;
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#font-select-container,
+#menu ul li,
+#submitbtn {
+  cursor: pointer;
+  margin: 0.25rem 0.5rem;
+  padding: 0.15rem 0.4rem;
+  border-color: var(--lightest) var(--dark) var(--dark) var(--lightest);
+  border-radius: 3px;
+  border-style: solid;
+  background-color: var(--lighter);
+  color: var(--darker);
+  font-size: 16px;
+}
+
+#font-select-container {
+  padding-right: 0;
+}
+
+#menu ul li:last-child {
+  margin-right: 0;
+}
+
+#font-select-container:hover,
+#menu ul li:hover,
+#menu ul li.active {
+  border-color: var(--dark) var(--lightest) var(--lightest) var(--dark);
+  background-color: var(--darker);
+  color: var(--lighter);
+}
+
+#page-container {
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  overflow: auto;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 0.5rem #222;
+}
+
+footer {
+  margin: 0;
+  padding: 0;
+  height: 6rem;
+  color: var(--lightest);
+  text-align: center;
+}
+
+footer div {
+  max-width: max-content;
+  margin: 2.5rem auto;
+  background-color: #222c;
+  box-shadow: 0 0 0.5rem 0.25rem #222c;
+  padding: 0.125rem 0.25rem;
+}

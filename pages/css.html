@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!-- Author: jkblair -->
+<html>
+
+<head>
+  <title>CSS</title>
+  <link href="styles/css.css" rel="stylesheet" />
+</head>
+
+<body>
+  <article class="content">
+    <section>
+      <h1 data-use-theme-font>What is CSS?</h1>
+      <p>CSS is an acronym for Cascading Style Sheets. The browser utilizes CSS to override the default
+        appearance of most HTML elements. Without CSS, websites would be very boring indeed!</p>
+    </section>
+    <section>
+      <h1 data-use-theme-font>How do I use CSS?</h1>
+      <p>CSS can be used within a web page in 3 ways: inline with the <span class="inline-code">style</span> attribute;
+        inside the <span class='inline-code'>head</span> tag's child elements as a <span
+          class="inline-code">style</span>
+        tag; or as an external stylesheet included as a <span class="inline-code">link</span> tag within the <span
+          class="inline-code">head</span> element.</p>
+      <section>
+        <h3 data-use-theme-font>Inline method</h3>
+        <p>The inline method is simple to use, but lacks flexibility offered by the other options. Styles applied using
+          the style attribute will only apply to the element and it's children (for
+          inherited properties).</p>
+        <pre><code class="language-html">&lt;p style="color: red;"&gt;This text is red&lt;/p&gt;</code></pre>
+      </section>
+      <section>
+        <h3 data-use-theme-font>Style tag method</h3>
+        <p>The style tag can be placed within the page's head section, and allows using selectors and combinators to
+          define elaborate styling rules. A brief example follows.</p>
+        <pre><code class="language-html">&lt;head&gt;
+  &lt;style&gt;
+    /* All paragraphs will have red text. */
+    p {
+      color: red;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;</code></pre>
+      </section>
+      <section>
+        <h3 data-use-theme-font>External stylesheet method</h3>
+        <p>The external stylesheet is the commonly preferred way of utilizing CSS. It removes the CSS from the HTML,
+          separating style and content so that both may be more manageable and organizable. To utilize the external
+          stylesheet, a document is created with a '.css' file extension, and that file is referenced in the HTML page's
+          head section. The CSS file's contents follow the same format used in the style tag section above.</p>
+        <h4>style.css</h4>
+        <pre><code class="language-css">/* Define variables */
+:root {
+
+  --darkest: #222;
+  --darker: #483b3a;
+  --dark: #775c55;
+  --light: #6e6262;
+  --lighter: #aa8d7a;
+  --lightest: #d3bfa9;
+}
+
+footer {
+  margin: 0;
+  padding: 0;
+  height: 6rem;
+  color: var(--lightest);
+  text-align: center;
+}
+
+footer div {
+  max-width: max-content;
+  margin: 2.5rem auto;
+  background-color: var(--darkest);
+  box-shadow: 0 0 0.5rem 0.25rem var(--darkest);
+  padding: 0.125rem 0.25rem;
+}</code></pre>
+        <h4>index.html's head section</h4>
+        <pre><code class="language-html">&lt;head&gt;
+  &lt;link href="style.css" rel="stylesheet"/&gt;
+&lt;/head&gt;</code></pre>
+      </section>
+    </section>
+    <section>
+      <h1 data-use-theme-font>Combining CSS and Javascript</h1>
+      <p>Javascript is frequently used alongside HTML and CSS to make pages more reponsive and interactive. In this
+        brief example, we will set up a simple graphical and animated button that can have it's state toggled by
+        clicking with the mouse.</p>
+      <p>The HTML follows, which simply sets the stage.
+      <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;link href="style.css" rel="stylesheet"/&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id="the-button" onclick="toggleButton(this)"&gt;Click me!&lt;/div&gt;
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </p>
+      <p>Next up, the CSS, which will define the appearance of the button and its toggled state.</p>
+      <pre><code class="language-css">#the-button {
+  cursor: pointer; /* Changes the mouse cursor to a pointer icon to make it obvious we're able to click */
+  margin: 0 auto; /* Center the button horizontally */
+  padding: 2rem 3rem; /* Give the button some space */
+  font-size: 2rem; /* Set the font size relative to the root element's font size */
+  background-color: #ccf; /* Start with a nice light background color */
+  border: 2px solid; /* Set an initial border size and style */
+  border-color: #66b8 #0047 #0047 #66b8; /* Setting border colors for top, right, bottom, left sides, respectively  */
+  border-radius: 0.5rem; /* Round the corners a bit */
+  transition: all 0.2s ease-in-out; /* Set a transition effect for the button */
+  width: 15rem; /* Set the width of the button */
+  height: 3rem; /* Set the height of the button */
+  text-align: center; /* Horizontally center the text */
+  line-height: 3rem; /* Vertically center the text (because we only have 1 line) */
+}
+
+/* This sets the style for when we hover over the button, or have it toggled on */
+#the-button:hover, #the-button.toggled {
+  padding: calc(2rem * 0.9) calc(3rem * 0.9); /* Decrease the button's padding to make it appear smaller */
+  background-color: #aad; /* Dark background color for the toggled/hovered state */
+  border-color: #0047 #66b8 #66b8 #0047; /* Swapping the border colors for the appearance of being inset into the page */
+}</code></pre>
+      <p>The final piece is the JavaScript, which will handle assigning the toggled class to the button when it is
+        clicked, and changing the text based on the toggle state.</p>
+      <pre><code class="language-js">(() => {
+  const btn = document.getElementById('the-button');
+  if (btn) {
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('toggled');
+      btn.innerText = btn.classList.contains('toggled') ? "I'm depressed 😔" : 'Click me!';
+    });
+  }
+})();</code></pre>
+      <p>The button is now fully functional and responsive. Let's see it in action here:</p>
+      <div id="button-container">
+        <div id="the-button">Click me!</div>
+      </div>
+    </section>
+  </article>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+/*
+  Author: jkblair
+  Description: Styling specific to the css.html page
+*/
+
+.content {
+  padding: 0.25rem 0.5rem;
+  background-color: var(--light);
+}
+
+.content>section>h1 {
+  border-bottom: 1px solid #2227;
+}
+
+.content>section section {
+  margin-left: 1rem;
+}
+
+.content p {
+  font-size: 1.5rem;
+}
+
+.content .inline-code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.75em;
+  background-color: #0007;
+  color: #fff;
+  border-radius: 3px;
+  padding: 0.125rem 0.25rem
+}
+
+#button-container {
+  padding-bottom: 1rem;
+}
+
+#the-button {
+  cursor: pointer;
+  margin: 0 auto;
+  padding: 0.5rem;
+  font-size: 2rem;
+  background-color: #ccf;
+  border: 2px solid;
+  border-color: #66b8 #0047 #0047 #66b8;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+  width: 15rem;
+  height: 3rem;
+  text-align: center;
+  line-height: 3rem;
+}
+
+#the-button:hover,
+#the-button.toggled {
+  padding: 0.4rem;
+  background-color: #aad;
+  border-color: #0047 #66b8 #66b8 #0047;
+}

@@ -1,0 +1,25 @@
+/* Author: tommydon */
+#clientexample {
+  width: 500px;
+  height: 200px;
+}
+
+/*So js can detect before mouse is on submit button*/
+#submitwrapper {
+  padding: 50px 100px 50px 100px;
+}
+
+#passwordfield{
+  margin-left:110px;  
+}
+
+#submitbtn {
+  font-family: 'Press Start 2P', monospace;
+  padding: 0px !important;
+  font-size: 15px;
+}
+
+#usurp{
+  width:-moz-available;
+  height:500px;
+}

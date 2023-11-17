@@ -1,0 +1,17 @@
+/*
+  Author: jkblair
+  Description: CSS specific to the content portion of the index.html page
+*/
+
+.content {
+  padding: 0.25rem 0.5rem;
+  background-color: var(--light);
+  font-size: 1.25rem;
+}
+
+.content #docs-list>li>span {
+  display: inline-block;
+  width: 15rem;
+  border-bottom: 1px solid var(--darkest);
+  padding: 0.25rem 0.5rem;
+}
