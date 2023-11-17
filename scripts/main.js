@@ -76,9 +76,9 @@ const loadPage = async (elmt) => {
 
   if (validPages.includes(pageName)) {
     console.log(`loading ${pageName}`);
-    const page = `../pages/${pageName}.html`;
-    const stylePath = `../styles/${pageName}.css`;
-    const scriptPath = `../scripts/${pageName}.js`;
+    const page = `./pages/${pageName}.html`;
+    const stylePath = `./styles/${pageName}.css`;
+    const scriptPath = `./scripts/${pageName}.js`;
     const container = document.getElementById('page-container');
     const active_elmt = document.querySelector('#menu ul li.active') || document.querySelector('#nav li');
 
